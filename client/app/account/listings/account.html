@@ -1,0 +1,22 @@
+Account bitch
+
+<form ng-app name="myForm">
+
+	<button id="test">Yo</button>
+
+<p>{{ count }}</p>
+
+Enter name: <input type="text" required  ng-model="name" ng-keypress="myFunct($event)">
+<button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary" ng-click="alertMe()">Add New</button>
+</form>
+  Hello <span class="btn btn-{{name}}" ng-bind="name" style="color:red; font-size:82px;" ></span>!
+<ul>
+    <li ng-repeat="user in users">
+
+        <button class="btn btn-primary">{{user.name}}</button>
+        <span ng-repeat="color in user.colors">
+    	
+        <span style="color:{{color}};">{{color}}</span>
+    </span>
+    </li>
+</ul>
