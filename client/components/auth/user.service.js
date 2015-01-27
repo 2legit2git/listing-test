@@ -17,6 +17,9 @@ angular.module('listingTestApp')
         params: {
           id:'me'
         }
+      },
+      update: {
+        method: 'PUT'
       }
 	  });
   });

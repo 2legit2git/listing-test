@@ -23,14 +23,5 @@ angular.module('listingTestApp')
         url: '/listings',
         templateUrl: 'app/account/listings/listings.html',
         authenticate: true
-      })
-      .state('listings.profile', {
-        url: '/profile',
-        templateUrl: 'app/account/listings/profile.html'
-      })
-      .state('listings.account', {
-        url: '/account',
-        templateUrl: 'app/account/listings/account.html',
-        controller: 'ListingsCtrl',
       });
   });

@@ -53,6 +53,18 @@ function hasRole(roleRequired) {
     });
 }
 
+function hasAccess(prop, role) {
+  return compose()
+    .use(isAuthenticated())
+    .use(function(req, res, next) {
+      if (req.user._id === req.params[prop] ||
+        config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(role)) {
+        return next();
+      }
+      return res.status(401).send();
+    })
+}
+
 /**
  * Returns a jwt token signed by the app secret
  */
@@ -72,5 +84,6 @@ function setTokenCookie(req, res) {
 
 exports.isAuthenticated = isAuthenticated;
 exports.hasRole = hasRole;
+exports.hasAccess = hasAccess;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;

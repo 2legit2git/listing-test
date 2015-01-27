@@ -79,6 +79,12 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+exports.update = function(req, res) {
+  console.log(req.body);
+  req.body.name += ' Name';
+  res.json(req.body);
+};
+
 /**
  * Get my info
  */
